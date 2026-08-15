@@ -1,0 +1,39 @@
+{
+  "name": "graha-backend",
+  "version": "3.0.0",
+  "description": "Production-grade backend for Graha — resilient Prokerala/OpenAI integration, shared caching, concurrency control, and horizontal scaling.",
+  "main": "src/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "start:cluster": "pm2-runtime start ecosystem.config.js",
+    "pm2:start": "pm2 start ecosystem.config.js",
+    "pm2:stop": "pm2 stop ecosystem.config.js",
+    "pm2:logs": "pm2 logs graha-backend"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "axios": "^1.7.2",
+    "axios-retry": "^4.5.0",
+    "dotenv": "^16.4.5",
+    "cors": "^2.8.5",
+    "express-rate-limit": "^7.4.0",
+    "node-cache": "^5.1.2",
+    "ioredis": "^5.4.1",
+    "openai": "^4.55.0",
+    "zod": "^3.23.8",
+    "opossum": "^8.1.4",
+    "p-queue": "^8.0.1",
+    "pino": "^9.3.2",
+    "pino-http": "^10.2.0",
+    "pino-pretty": "^11.2.2",
+    "helmet": "^7.1.0",
+    "compression": "^1.7.4",
+    "uuid": "^10.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4",
+    "pm2": "^5.4.2"
+  }
+}
